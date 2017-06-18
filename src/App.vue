@@ -74,10 +74,10 @@ export default {
     }
   },
   beforeMount(){
-    this.searchOrderOccurrences();
+    // this.searchOrderOccurrences();
   },
   mounted(){
-    $('.modal').modal();
+   $('.modal').modal();
   },
   methods: {
     searchByCompanyName() {
@@ -113,10 +113,12 @@ export default {
     login(){
       // ordersService.test()
       // .then(response => {console.log(response)})
-      this.$http.post('https://angular-scaffold-backend.herokuapp.com/v1/login', {username :'koyczan', password: 'password'}).then(response => {console.log(response)})
+      // this.$http.options.xhr = { withCredentials: true }
+      // this.$http.headers.common['Access-Control-Allow-Origin'] = '*';
+      this.$http.post('http://localhost:8000/v1/login', {username :'master', password: 'password'}).then(response => {console.log(response)})
     },
     createStudent(){
-      this.$http.post('https://angular-scaffold-backend.herokuapp.com/v1/student', {name :'koyczan', account: '123123'}).then(response => {console.log(response)})
+      this.$http.post('http://localhost:8000/v1/student', {name :'koyczan', account: '123123'}).then(response => {console.log(response)})
     }
   }
 }

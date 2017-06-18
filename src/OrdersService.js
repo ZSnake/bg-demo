@@ -43,12 +43,12 @@ const getByCompanyName = (companyName) =>
 	// 		Content-Type: 'application/json'
 	// 	},
 	// 	body: JSON.stringify({
-	// 		name: 'master',
+	// 		name: 'koyczan',
 	// 		account: 'password'
 	// 	})
 	// });
 
-	const test = () => Vue.$http.post('http://localhost:8000/v1/login', {name :'master', account: 'password'})
+	const test = () => Vue.$http.post('http://localhost:8000/v1/login', {name :'master', account: 'password'}, {credentials: true})
 
 export default {
 	getByCompanyName,
