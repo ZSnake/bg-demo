@@ -110,15 +110,18 @@ export default {
         this.orders= [];
       })
     },
+    register(){
+      this.$http.post('https://bg-demo.herokuapp.com//v1/register', {username :'master', password: 'password', scope: ['admin']}).then(response => {console.log(response)})
+    },
     login(){
       // ordersService.test()
       // .then(response => {console.log(response)})
       // this.$http.options.xhr = { withCredentials: true }
       // this.$http.headers.common['Access-Control-Allow-Origin'] = '*';
-      this.$http.post('http://localhost:8000/v1/login', {username :'master', password: 'password'}).then(response => {console.log(response)})
+      this.$http.post('https://bg-demo.herokuapp.com//v1/login', {username :'master', password: 'password'}).then(response => {console.log(response)})
     },
     createStudent(){
-      this.$http.post('http://localhost:8000/v1/student', {name :'koyczan', account: '123123'}).then(response => {console.log(response)})
+      this.$http.post('https://bg-demo.herokuapp.com//v1/student', {name :'koyczan', account: '123123'}).then(response => {console.log(response)})
     }
   }
 }
